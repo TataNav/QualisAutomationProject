@@ -1,0 +1,28 @@
+[INFO ] 2021-10-04 22:45:45 [main] BaseTest - This is to track the suite execution start time
+[INFO ] 2021-10-04 22:45:50 [TestNG-test=Login Functionality Coverage1-1] BaseTest - Before CLASS setup is successfully done
+[INFO ] 2021-10-04 22:45:50 [TestNG-test=Login Functionality Coverage1-2] BaseTest - Before CLASS setup is successfully done
+[INFO ] 2021-10-04 22:45:58 [TestNG-test=Login Functionality Coverage1-2] BaseTest - ChangePasswordTest tests have been executed.
+[INFO ] 2021-10-04 22:45:59 [main] BaseTest - This is to track the suite completion time
+[INFO ] 2021-10-04 22:47:41 [main] BaseTest - This is to track the suite execution start time
+[INFO ] 2021-10-04 22:47:45 [TestNG-test=Login Functionality Coverage1-2] BaseTest - Before CLASS setup is successfully done
+[INFO ] 2021-10-04 22:47:45 [TestNG-test=Login Functionality Coverage1-1] BaseTest - Before CLASS setup is successfully done
+[INFO ] 2021-10-04 22:48:00 [TestNG-test=Login Functionality Coverage1-2] BaseTest - ChangePasswordTest tests have been executed.
+[INFO ] 2021-10-04 22:48:09 [TestNG-test=Login Functionality Coverage1-1] BaseTest - LoginTest tests have been executed.
+[INFO ] 2021-10-04 22:48:10 [main] BaseTest - This is to track the suite completion time
+[INFO ] 2021-10-04 23:11:51 [main] BaseTest - This is to track the suite execution start time
+[INFO ] 2021-10-04 23:28:01 [main] BaseTest - This is to track the suite execution start time
+[INFO ] 2021-10-04 23:28:03 [main] BaseTest - Before CLASS setup is successfully done
+[INFO ] 2021-10-04 23:28:12 [main] BaseTest - LoginTest tests have been executed.
+[INFO ] 2021-10-04 23:28:13 [main] BaseTest - This is to track the suite completion time
+[INFO ] 2021-10-04 23:29:22 [main] BaseTest - This is to track the suite execution start time
+[INFO ] 2021-10-04 23:29:24 [main] BaseTest - Before CLASS setup is successfully done
+[INFO ] 2021-10-04 23:29:36 [main] BaseTest - LoginTest tests have been executed.
+[INFO ] 2021-10-04 23:29:40 [main] BaseTest - This is to track the suite completion time
+[INFO ] 2021-10-04 23:31:22 [main] BaseTest - This is to track the suite execution start time
+[INFO ] 2021-10-04 23:31:24 [main] BaseTest - Before CLASS setup is successfully done
+[INFO ] 2021-10-04 23:31:34 [main] BaseTest - LoginTest tests have been executed.
+[INFO ] 2021-10-04 23:31:39 [main] BaseTest - This is to track the suite completion time
+[INFO ] 2021-10-04 23:32:07 [main] BaseTest - This is to track the suite execution start time
+[INFO ] 2021-10-04 23:32:09 [main] BaseTest - Before CLASS setup is successfully done
+[INFO ] 2021-10-04 23:35:12 [main] BaseTest - This is to track the suite execution start time
+[INFO ] 2021-10-04 23:35:14 [main] BaseTest - Before CLASS setup is successfully done

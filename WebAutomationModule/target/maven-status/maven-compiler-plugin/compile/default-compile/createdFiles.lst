@@ -1,0 +1,4 @@
+General\Helper.class
+General\BasePage.class
+General\ConfigFileReader.class
+General\BaseTest.class
