@@ -9,6 +9,10 @@ import java.util.concurrent.TimeUnit;
 
 public class BaseTest {
     protected static Logger logger = LogManager.getLogger(BaseTest.class.getName());
+<<<<<<< HEAD
+=======
+    protected String url = ConfigFileReader.getURL();
+>>>>>>> 061c94a7551b75fa73c5a89f261ae3c4b91d8330
     private WebDriver driver;
 
     @BeforeSuite

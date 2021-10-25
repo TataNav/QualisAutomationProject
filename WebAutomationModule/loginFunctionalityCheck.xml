@@ -3,9 +3,24 @@
     <listeners>
         <listener class-name="General.Listeners"></listener>
     </listeners>
+<<<<<<< HEAD
     <test name="Login Functionality Regression">
         <classes>
             <class name="LoginTest"/>
+=======
+    <test name="Login Functionality Coverage1">
+        <classes>
+            <class name="LoginTest">
+                <methods>
+                    <include name="NavigateThroughAllPages"/>
+                </methods>
+            </class>
+            <class name="ChangePasswordTest">
+                <methods>
+                    <include name="ParallelTesting2"/>
+                </methods>
+            </class>
+>>>>>>> 061c94a7551b75fa73c5a89f261ae3c4b91d8330
         </classes>
     </test>
 </suite>

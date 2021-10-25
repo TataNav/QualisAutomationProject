@@ -2,11 +2,15 @@ package General;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
+<<<<<<< HEAD
 import com.sun.mail.util.MailSSLSocketFactory;
+=======
+>>>>>>> 061c94a7551b75fa73c5a89f261ae3c4b91d8330
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+<<<<<<< HEAD
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -26,10 +30,22 @@ import java.util.Random;
 
 public class Helper {
     private static Properties properties = new Properties();
+=======
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.Iterator;
+import java.util.Properties;
+
+public class Helper {
+    private static Properties properties;
+>>>>>>> 061c94a7551b75fa73c5a89f261ae3c4b91d8330
     private static final String configFilePath = System.getProperty("user.dir") + "/src/main/resources/configs/Configuration.properties";
     private static String excelFilePath = System.getProperty("user.dir") + "/src/main/resources/qualis_users_credentials.xlsx";
     private static ExtentReports extent;
     private static String[] userCredentials = new String[2];
+<<<<<<< HEAD
     private static String username = "qataskdemoaccnt@gmail.com";
     private static String password = "!Qualis1_1";
     private static String hostName = "imap.gmail.com";
@@ -37,6 +53,13 @@ public class Helper {
     //to initialize property file to get general configs
     public static Properties InitializePropertyFile() {
         try {
+=======
+
+    //to initialize property file to get general configs
+    public static Properties initializePropertyFile(){
+        try {
+            properties = new Properties();
+>>>>>>> 061c94a7551b75fa73c5a89f261ae3c4b91d8330
             FileInputStream configFile = new FileInputStream(configFilePath);
             try {
                 properties.load(configFile);
@@ -44,15 +67,24 @@ public class Helper {
             } catch (IOException e) {
                 e.printStackTrace();
             }
+<<<<<<< HEAD
         } catch (FileNotFoundException e) {
+=======
+        } catch(FileNotFoundException e){
+>>>>>>> 061c94a7551b75fa73c5a89f261ae3c4b91d8330
             e.printStackTrace();
             throw new RuntimeException("Configuration file not found at " + configFilePath);
         }
         return properties;
     }
+<<<<<<< HEAD
 
     //to apply reporting
     public static ExtentReports GetReportObject() {
+=======
+    //to apply reporting
+    public static ExtentReports getReportObject(){
+>>>>>>> 061c94a7551b75fa73c5a89f261ae3c4b91d8330
         String reportPath = System.getProperty("user.dir") + "//report//";
         ExtentSparkReporter reporter = new ExtentSparkReporter(reportPath);
         reporter.config().setReportName("Web Automation Results");
@@ -63,6 +95,7 @@ public class Helper {
 
         return extent;
     }
+<<<<<<< HEAD
 
     //to read data from excel and be able to update it
     public static String[] ReadDataFromExcel(String user) throws IOException {
@@ -70,11 +103,23 @@ public class Helper {
         XSSFSheet sheet = null;
         for (int i = 0; i < workbook.getNumberOfSheets(); i++) {
             if (workbook.getSheetName(i).equalsIgnoreCase(ConfigFileReader.getEnv())) {
+=======
+    //to read data from excel and be able to update it
+    public static String[] ReadDataFromExcel(String loggedInUser) throws IOException {
+        XSSFWorkbook workbook = new XSSFWorkbook(excelFilePath);
+        XSSFSheet sheet = null;
+        for(int i = 0; i < workbook.getNumberOfSheets(); i++) {
+            if(workbook.getSheetName(i).equalsIgnoreCase(ConfigFileReader.getEnv())){
+>>>>>>> 061c94a7551b75fa73c5a89f261ae3c4b91d8330
                 sheet = workbook.getSheetAt(i);
                 Iterator<Row> rows = sheet.iterator();
                 Row row = rows.next();
 
+<<<<<<< HEAD
                 while (!row.getCell(0).getStringCellValue().equalsIgnoreCase(user)) {
+=======
+                while(!row.getCell(0).getStringCellValue().equalsIgnoreCase(loggedInUser)){
+>>>>>>> 061c94a7551b75fa73c5a89f261ae3c4b91d8330
                     row = rows.next();
                 }
                 Iterator<Cell> cell = row.cellIterator();
@@ -85,6 +130,7 @@ public class Helper {
         }
         return userCredentials;
     }
+<<<<<<< HEAD
 
     public static void UpdatePasswordInExcel(String user, String newPassword) throws IOException {
         FileInputStream fis = new FileInputStream(excelFilePath);
@@ -175,5 +221,7 @@ public class Helper {
         indexOfSpecificCharInSubstring = substring.lastIndexOf(charToGetIndexFor);
         return firstIndexOfSubstring + indexOfSpecificCharInSubstring;
     }
+=======
+>>>>>>> 061c94a7551b75fa73c5a89f261ae3c4b91d8330
 }
 

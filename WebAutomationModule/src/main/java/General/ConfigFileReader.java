@@ -8,7 +8,11 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import java.util.Properties;
 
 public class ConfigFileReader {
+<<<<<<< HEAD
     private static Properties properties = Helper.InitializePropertyFile();
+=======
+    private static Properties properties = Helper.initializePropertyFile();
+>>>>>>> 061c94a7551b75fa73c5a89f261ae3c4b91d8330
 
     private static String  env;
     private static String url;
