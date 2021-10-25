@@ -26,3 +26,7 @@
 [INFO ] 2021-10-25 12:50:13 [main] BaseTest - Before CLASS setup is successfully done
 [INFO ] 2021-10-25 12:50:36 [main] BaseTest - LoginTest tests have been executed.
 [INFO ] 2021-10-25 12:50:37 [main] BaseTest - This is to track the suite completion time
+[INFO ] 2021-10-25 16:13:56 [main] BaseTest - This is to track the suite execution start time
+[INFO ] 2021-10-25 16:14:00 [TestNG-test=Login Functionality Regression-1] BaseTest - Before CLASS setup is successfully done
+[INFO ] 2021-10-25 16:14:31 [TestNG-test=Login Functionality Regression-1] BaseTest - LoginTest tests have been executed.
+[INFO ] 2021-10-25 16:14:32 [main] BaseTest - This is to track the suite completion time

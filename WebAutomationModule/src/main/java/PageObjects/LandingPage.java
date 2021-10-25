@@ -34,11 +34,7 @@ public class LandingPage extends BasePage {
 
     //Sidebar elements
     @FindBy(xpath = "//a[contains(text(),'Dashboard')]")
-<<<<<<< HEAD
     WebElement dashboard;
-=======
-    private WebElement dashboard;
->>>>>>> 061c94a7551b75fa73c5a89f261ae3c4b91d8330
     @FindBy(xpath = "//a[contains(text(),'Funds')]")
     private WebElement funds;
     @FindBy(xpath = "//a[contains(text(),'Investors')]")
