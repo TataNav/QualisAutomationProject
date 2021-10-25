@@ -1,0 +1,85 @@
+[INFO ] 2021-10-06 14:56:06 [main] BaseTest - This is to track the suite execution start time
+[INFO ] 2021-10-06 14:56:08 [TestNG-test=Login Functionality Coverage1-2] BaseTest - Before CLASS setup is successfully done
+[INFO ] 2021-10-06 14:56:08 [TestNG-test=Login Functionality Coverage1-1] BaseTest - Before CLASS setup is successfully done
+[INFO ] 2021-10-06 14:56:16 [TestNG-test=Login Functionality Coverage1-2] BaseTest - ChangePasswordTest tests have been executed.
+[INFO ] 2021-10-06 14:56:20 [TestNG-test=Login Functionality Coverage1-1] BaseTest - LoginTest tests have been executed.
+[INFO ] 2021-10-06 14:56:28 [main] BaseTest - This is to track the suite execution start time
+[INFO ] 2021-10-06 14:56:30 [TestNG-test=Login Functionality Coverage1-1] BaseTest - Before CLASS setup is successfully done
+[INFO ] 2021-10-06 14:56:30 [TestNG-test=Login Functionality Coverage1-2] BaseTest - Before CLASS setup is successfully done
+[INFO ] 2021-10-06 14:56:33 [TestNG-test=Login Functionality Coverage1-2] BaseTest - ChangePasswordTest tests have been executed.
+[INFO ] 2021-10-06 14:56:38 [TestNG-test=Login Functionality Coverage1-1] BaseTest - LoginTest tests have been executed.
+[INFO ] 2021-10-06 14:58:29 [main] BaseTest - This is to track the suite execution start time
+[INFO ] 2021-10-06 14:58:31 [TestNG-test=Login Functionality Coverage1-1] BaseTest - Before CLASS setup is successfully done
+[INFO ] 2021-10-06 14:58:31 [TestNG-test=Login Functionality Coverage1-2] BaseTest - Before CLASS setup is successfully done
+[INFO ] 2021-10-06 14:58:35 [TestNG-test=Login Functionality Coverage1-2] BaseTest - ChangePasswordTest tests have been executed.
+[INFO ] 2021-10-06 14:58:39 [TestNG-test=Login Functionality Coverage1-1] BaseTest - LoginTest tests have been executed.
+[INFO ] 2021-10-06 15:00:23 [main] BaseTest - This is to track the suite execution start time
+[INFO ] 2021-10-06 15:01:00 [TestNG-test=Login Functionality Coverage1-2] BaseTest - Before CLASS setup is successfully done
+[INFO ] 2021-10-06 15:01:02 [TestNG-test=Login Functionality Coverage1-1] BaseTest - Before CLASS setup is successfully done
+[INFO ] 2021-10-06 15:01:07 [TestNG-test=Login Functionality Coverage1-2] BaseTest - ChangePasswordTest tests have been executed.
+[INFO ] 2021-10-06 15:01:17 [TestNG-test=Login Functionality Coverage1-1] BaseTest - LoginTest tests have been executed.
+[INFO ] 2021-10-06 15:01:22 [main] BaseTest - This is to track the suite completion time
+[INFO ] 2021-10-06 16:15:35 [main] BaseTest - This is to track the suite execution start time
+[INFO ] 2021-10-06 16:15:37 [TestNG-test=Login Functionality Coverage1-1] BaseTest - Before CLASS setup is successfully done
+[INFO ] 2021-10-06 16:15:37 [TestNG-test=Login Functionality Coverage1-2] BaseTest - Before CLASS setup is successfully done
+[INFO ] 2021-10-06 16:15:44 [TestNG-test=Login Functionality Coverage1-2] BaseTest - ChangePasswordTest tests have been executed.
+[INFO ] 2021-10-06 16:15:48 [TestNG-test=Login Functionality Coverage1-1] BaseTest - LoginTest tests have been executed.
+[INFO ] 2021-10-06 16:17:12 [main] BaseTest - This is to track the suite execution start time
+[INFO ] 2021-10-06 16:17:15 [TestNG-test=Login Functionality Coverage1-2] BaseTest - Before CLASS setup is successfully done
+[INFO ] 2021-10-06 16:17:15 [TestNG-test=Login Functionality Coverage1-1] BaseTest - Before CLASS setup is successfully done
+[INFO ] 2021-10-06 16:17:19 [TestNG-test=Login Functionality Coverage1-2] BaseTest - ChangePasswordTest tests have been executed.
+[INFO ] 2021-10-06 16:17:23 [TestNG-test=Login Functionality Coverage1-1] BaseTest - LoginTest tests have been executed.
+[INFO ] 2021-10-06 16:17:37 [main] BaseTest - This is to track the suite execution start time
+[INFO ] 2021-10-06 16:18:01 [TestNG-test=Login Functionality Coverage1-1] BaseTest - Before CLASS setup is successfully done
+[INFO ] 2021-10-06 16:18:20 [TestNG-test=Login Functionality Coverage1-2] BaseTest - Before CLASS setup is successfully done
+[INFO ] 2021-10-06 16:18:31 [TestNG-test=Login Functionality Coverage1-2] BaseTest - ChangePasswordTest tests have been executed.
+[INFO ] 2021-10-06 16:18:33 [TestNG-test=Login Functionality Coverage1-1] BaseTest - LoginTest tests have been executed.
+[INFO ] 2021-10-06 16:18:38 [main] BaseTest - This is to track the suite completion time
+[INFO ] 2021-10-06 16:19:08 [main] BaseTest - This is to track the suite execution start time
+[INFO ] 2021-10-06 16:19:10 [TestNG-test=Login Functionality Coverage1-2] BaseTest - Before CLASS setup is successfully done
+[INFO ] 2021-10-06 16:19:10 [TestNG-test=Login Functionality Coverage1-1] BaseTest - Before CLASS setup is successfully done
+[INFO ] 2021-10-06 16:19:16 [TestNG-test=Login Functionality Coverage1-2] BaseTest - ChangePasswordTest tests have been executed.
+[INFO ] 2021-10-06 16:19:20 [TestNG-test=Login Functionality Coverage1-1] BaseTest - LoginTest tests have been executed.
+[INFO ] 2021-10-06 16:20:51 [main] BaseTest - This is to track the suite execution start time
+[INFO ] 2021-10-06 16:20:52 [TestNG-test=Login Functionality Coverage1-1] BaseTest - Before CLASS setup is successfully done
+[INFO ] 2021-10-06 16:21:03 [TestNG-test=Login Functionality Coverage1-1] BaseTest - LoginTest tests have been executed.
+[INFO ] 2021-10-06 16:21:07 [main] BaseTest - This is to track the suite completion time
+[INFO ] 2021-10-06 16:21:54 [main] BaseTest - This is to track the suite execution start time
+[INFO ] 2021-10-06 16:21:54 [TestNG-test=Login Functionality Coverage1-2] BaseTest - Before CLASS setup is successfully done
+[INFO ] 2021-10-06 16:21:54 [TestNG-test=Login Functionality Coverage1-1] BaseTest - Before CLASS setup is successfully done
+[INFO ] 2021-10-06 16:22:04 [TestNG-test=Login Functionality Coverage1-1] BaseTest - LoginTest tests have been executed.
+[INFO ] 2021-10-06 16:22:09 [main] BaseTest - This is to track the suite completion time
+[INFO ] 2021-10-06 16:23:33 [main] BaseTest - This is to track the suite execution start time
+[INFO ] 2021-10-06 16:23:33 [TestNG-test=Login Functionality Coverage1-2] BaseTest - Before CLASS setup is successfully done
+[INFO ] 2021-10-06 16:23:33 [TestNG-test=Login Functionality Coverage1-1] BaseTest - Before CLASS setup is successfully done
+[INFO ] 2021-10-06 16:24:30 [main] BaseTest - This is to track the suite execution start time
+[INFO ] 2021-10-06 16:24:33 [TestNG-test=Login Functionality Coverage1-2] BaseTest - Before CLASS setup is successfully done
+[INFO ] 2021-10-06 16:24:33 [TestNG-test=Login Functionality Coverage1-1] BaseTest - Before CLASS setup is successfully done
+[INFO ] 2021-10-06 16:24:44 [TestNG-test=Login Functionality Coverage1-1] BaseTest - LoginTest tests have been executed.
+[INFO ] 2021-10-06 16:25:20 [main] BaseTest - This is to track the suite execution start time
+[INFO ] 2021-10-06 16:25:24 [TestNG-test=Login Functionality Coverage1-2] BaseTest - Before CLASS setup is successfully done
+[INFO ] 2021-10-06 16:25:24 [TestNG-test=Login Functionality Coverage1-1] BaseTest - Before CLASS setup is successfully done
+[INFO ] 2021-10-06 16:25:34 [TestNG-test=Login Functionality Coverage1-1] BaseTest - LoginTest tests have been executed.
+[INFO ] 2021-10-06 16:25:38 [main] BaseTest - This is to track the suite completion time
+[INFO ] 2021-10-06 16:27:24 [main] BaseTest - This is to track the suite execution start time
+[INFO ] 2021-10-06 16:27:26 [TestNG-test=Login Functionality Coverage1-2] BaseTest - Before CLASS setup is successfully done
+[INFO ] 2021-10-06 16:27:26 [TestNG-test=Login Functionality Coverage1-1] BaseTest - Before CLASS setup is successfully done
+[INFO ] 2021-10-06 16:27:32 [TestNG-test=Login Functionality Coverage1-2] BaseTest - ChangePasswordTest tests have been executed.
+[INFO ] 2021-10-06 16:27:38 [TestNG-test=Login Functionality Coverage1-1] BaseTest - LoginTest tests have been executed.
+[INFO ] 2021-10-06 16:27:43 [main] BaseTest - This is to track the suite completion time
+[INFO ] 2021-10-06 16:30:17 [main] BaseTest - This is to track the suite execution start time
+[INFO ] 2021-10-06 16:30:19 [main] BaseTest - Before CLASS setup is successfully done
+[INFO ] 2021-10-06 16:30:25 [main] BaseTest - LoginTest tests have been executed.
+[INFO ] 2021-10-06 16:30:29 [main] BaseTest - This is to track the suite completion time
+[INFO ] 2021-10-06 16:30:58 [main] BaseTest - This is to track the suite execution start time
+[INFO ] 2021-10-06 16:31:00 [main] BaseTest - Before CLASS setup is successfully done
+[INFO ] 2021-10-06 16:31:07 [main] BaseTest - LoginTest tests have been executed.
+[INFO ] 2021-10-06 16:31:07 [main] BaseTest - This is to track the suite completion time
+[INFO ] 2021-10-06 16:31:38 [main] BaseTest - This is to track the suite execution start time
+[INFO ] 2021-10-06 16:31:40 [main] BaseTest - Before CLASS setup is successfully done
+[INFO ] 2021-10-06 16:31:49 [main] BaseTest - LoginTest tests have been executed.
+[INFO ] 2021-10-06 16:31:49 [main] BaseTest - This is to track the suite completion time
+[INFO ] 2021-10-06 16:35:28 [main] BaseTest - This is to track the suite execution start time
+[INFO ] 2021-10-06 16:35:30 [main] BaseTest - Before CLASS setup is successfully done
+[INFO ] 2021-10-06 16:35:55 [main] BaseTest - LoginTest tests have been executed.
+[INFO ] 2021-10-06 16:35:59 [main] BaseTest - This is to track the suite completion time
