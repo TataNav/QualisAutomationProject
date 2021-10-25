@@ -30,4 +30,8 @@ public class BasePage {
     public void waitForTextToDisappear(WebElement locator, String text){
         wait.until(ExpectedConditions.not(ExpectedConditions.textToBePresentInElement(locator,text)));
     }
+
+    public void waitForElementIsClickable(WebElement locator){
+        wait.until(ExpectedConditions.elementToBeClickable(locator));
+    }
 }

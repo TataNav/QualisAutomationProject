@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="8" failures="4" name="TestSuite" time="45.669" errors="0" skipped="2">
+<testsuite tests="5" failures="0" name="TestSuite" time="19.207" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_291\jre\bin"/>
     <property name="java.vm.version" value="25.291-b10"/>
-    <property name="browser" value="firefox"/>
     <property name="java.vm.vendor" value="Oracle Corporation"/>
-    <property name="maven.multiModuleProjectDirectory" value="C:\source\QualisAutomationProject\WebAutomationModule"/>
+    <property name="maven.multiModuleProjectDirectory" value="C:\source\QualisAutomationProject"/>
     <property name="java.vendor.url" value="http://java.oracle.com/"/>
     <property name="path.separator" value=";"/>
     <property name="guice.disable.misplaced.annotation.check" value="true"/>
@@ -17,7 +16,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.os.patch.level" value=""/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="user.dir" value="C:\source\QualisAutomationProject\WebAutomationModule"/>
+    <property name="user.dir" value="C:\source\QualisAutomationProject"/>
     <property name="java.runtime.version" value="1.8.0_291-b10"/>
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
     <property name="java.endorsed.dirs" value="C:\Program Files\Java\jdk1.8.0_291\jre\lib\endorsed"/>
@@ -50,7 +49,7 @@
     <property name="java.vm.specification.version" value="1.8"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="java.home" value="C:\Program Files\Java\jdk1.8.0_291\jre"/>
-    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher test -Dbrowser=firefox"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher install"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
     <property name="user.language" value="en"/>
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
@@ -70,185 +69,9 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="ChangePasswordTest" name="ParallelTesting" time="0.007"/>
-  <testcase classname="ChangePasswordTest" name="ParallelTesting2" time="0"/>
-  <testcase classname="LoginTest" name="Logout" time="23.657">
-    <failure message="Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator &apos;By.xpath: //span[contains(text(),&apos;Logout&apos;)]&apos; (tried for 10 second(s) with 100 milliseconds interval)" type="org.openqa.selenium.TimeoutException">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator &apos;By.xpath: //span[contains(text(),&apos;Logout&apos;)]&apos; (tried for 10 second(s) with 100 milliseconds interval)
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
-	at PageObjects.LandingPage.GoToLoggedInUserSettingsToLogout(LandingPage.java:176)
-	at LoginTest.Logout(LoginTest.java:96)
-Caused by: org.openqa.selenium.NoSuchElementException: Unable to locate element: //span[contains(text(),&apos;Logout&apos;)]
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;AMMQA10&apos;, ip: &apos;192.168.1.6&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_291&apos;
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 91.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20210804193234, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 25916, moz:profile: C:\Users\tatevik.navasardya..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: 4c7f2530-2434-4344-a9bd-afce7ff48c6b
-*** Element info: {Using=xpath, value=//span[contains(text(),&apos;Logout&apos;)]}
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at com.sun.proxy.$Proxy26.isDisplayed(Unknown Source)
-	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:314)
-	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:43)
-	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:300)
-	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:297)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
-	... 40 more
-</failure>
-    <system-out>[INFO ] 2021-10-05 09:42:38 [main] BaseTest - ChangePasswordTest tests have been executed.
-[INFO ] 2021-10-05 09:42:44 [main] BaseTest - Before CLASS setup is successfully done
-</system-out>
-    <system-err>1633412558862	Marionette	INFO	Stopped listening on port 59430
-JavaScript error: resource:///modules/Interactions.jsm, line 209: NS_ERROR_FAILURE: Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIUserIdleService.removeIdleObserver]
-
-###!!! [Parent][MessageChannel] Error: (msgtype=0x390076,name=PContent::Msg_DestroyBrowsingContextGroup) Closed channel: cannot send/recv
-
-JavaScript error: resource://gre/modules/Sqlite.jsm, line 1030: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\tatevik.navasardyan\AppData\Local\Temp\rust_mozprofileZaKhkd\protections.sqlite
-1633412559963	geckodriver	INFO	Listening on 127.0.0.1:13766
-1633412560417	mozrunner::runner	INFO	Running command: &quot;C:\\Program Files\\Mozilla Firefox\\firefox.exe&quot; &quot;--marionette&quot; &quot;-foreground&quot; &quot;-no-remote&quot; &quot;-profile&quot; &quot;C:\\Users\\TATEVI~1.NAV\\AppData\\Local\\Temp\\rust_mozprofiletkQ6O3&quot;
-1633412561083	Marionette	INFO	Marionette enabled
-console.warn: SearchSettings: &quot;get: No settings file exists, new profile?&quot; (new NotFoundError(&quot;Could not open the file at C:\\Users\\tatevik.navasardyan\\AppData\\Local\\Temp\\rust_mozprofiletkQ6O3\\search.json.mozlz4&quot;, (void 0)))
-console.error: Region.jsm: &quot;Error fetching region&quot; (new TypeError(&quot;NetworkError when attempting to fetch resource.&quot;, &quot;&quot;))
-console.error: Region.jsm: &quot;Failed to fetch region&quot; (new Error(&quot;NO_RESULT&quot;, &quot;resource://gre/modules/Region.jsm&quot;, 419))
-1633412564018	Marionette	INFO	Listening on port 60303
-1633412564069	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
-Oct 05, 2021 9:42:44 AM org.openqa.selenium.remote.ProtocolHandshake createSession
-INFO: Detected dialect: W3C
-1633412572333	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
-TimedPromise/&lt;@chrome://remote/content/marionette/sync.js:238:19
-TimedPromise@chrome://remote/content/marionette/sync.js:223:10
-interaction.flushEventLoop@chrome://remote/content/marionette/interaction.js:431:10
-webdriverClickElement@chrome://remote/content/marionette/interaction.js:179:31
-</system-err>
-  </testcase>
-  <testcase classname="LoginTest" name="NavigateThroughAllPages" time="10.103">
-    <failure message="Expected condition failed: waiting for visibility of [[FirefoxDriver: firefox on WINDOWS (4c7f2530-2434-4344-a9bd-afce7ff48c6b)] -&gt; css selector: input[type =&apos;text&apos;] (tried for 10 second(s) with 100 milliseconds interval)
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;AMMQA10&apos;, ip: &apos;192.168.1.6&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_291&apos;
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 91.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20210804193234, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 25916, moz:profile: C:\Users\tatevik.navasardya..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: 4c7f2530-2434-4344-a9bd-afce7ff48c6b" type="org.openqa.selenium.TimeoutException">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of [[FirefoxDriver: firefox on WINDOWS (4c7f2530-2434-4344-a9bd-afce7ff48c6b)] -&gt; css selector: input[type =&apos;text&apos;] (tried for 10 second(s) with 100 milliseconds interval)
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;AMMQA10&apos;, ip: &apos;192.168.1.6&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_291&apos;
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 91.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20210804193234, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 25916, moz:profile: C:\Users\tatevik.navasardya..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: 4c7f2530-2434-4344-a9bd-afce7ff48c6b
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
-	at General.BasePage.waitForElementToAppear(BasePage.java:23)
-	at PageObjects.LoginPage.EnterUsername(LoginPage.java:32)
-	at LoginTest.NavigateThroughAllPages(LoginTest.java:42)
-</failure>
-  </testcase>
-  <testcase classname="LoginTest" name="ShouldLoginWithValidCredentials" time="10.662">
-    <failure message="Expected condition failed: waiting for visibility of [[FirefoxDriver: firefox on WINDOWS (4c7f2530-2434-4344-a9bd-afce7ff48c6b)] -&gt; css selector: input[type =&apos;text&apos;] (tried for 10 second(s) with 100 milliseconds interval)
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;AMMQA10&apos;, ip: &apos;192.168.1.6&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_291&apos;
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 91.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20210804193234, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 25916, moz:profile: C:\Users\tatevik.navasardya..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: 4c7f2530-2434-4344-a9bd-afce7ff48c6b" type="org.openqa.selenium.TimeoutException">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of [[FirefoxDriver: firefox on WINDOWS (4c7f2530-2434-4344-a9bd-afce7ff48c6b)] -&gt; css selector: input[type =&apos;text&apos;] (tried for 10 second(s) with 100 milliseconds interval)
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;AMMQA10&apos;, ip: &apos;192.168.1.6&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_291&apos;
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 91.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20210804193234, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 25916, moz:profile: C:\Users\tatevik.navasardya..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: 4c7f2530-2434-4344-a9bd-afce7ff48c6b
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
-	at General.BasePage.waitForElementToAppear(BasePage.java:23)
-	at PageObjects.LoginPage.EnterUsername(LoginPage.java:32)
-	at LoginTest.ShouldLoginWithValidCredentials(LoginTest.java:26)
-</failure>
-    <system-err>Cleaning up unclosed ZipFile for archive C:\source\QualisAutomationProject\WebAutomationModule\src\main\resources\qualis_users_credentials.xlsx
-</system-err>
-  </testcase>
-  <testcase classname="LoginTest" name="ChangePassword" time="0.001">
-    <skipped/>
-  </testcase>
-  <testcase classname="LoginTest" name="ShouldNotLoginWithInvalidCredentials" time="0">
-    <skipped/>
-  </testcase>
-  <testcase classname="ChangePasswordTest" name="afterSuite" time="1.239">
-    <failure message="Tried to run command without establishing a connection
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;AMMQA10&apos;, ip: &apos;192.168.1.6&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_291&apos;
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 91.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20210804193234, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 35484, moz:profile: C:\Users\tatevik.navasardya..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: ba48aca9-729e-44f2-b6c6-8bf33c78db04" type="org.openqa.selenium.NoSuchSessionException">org.openqa.selenium.NoSuchSessionException: Tried to run command without establishing a connection
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;AMMQA10&apos;, ip: &apos;192.168.1.6&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_291&apos;
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 91.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20210804193234, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 35484, moz:profile: C:\Users\tatevik.navasardya..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: ba48aca9-729e-44f2-b6c6-8bf33c78db04
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:609)
-	at org.openqa.selenium.remote.RemoteWebDriver.quit(RemoteWebDriver.java:452)
-	at General.BaseTest.afterSuite(BaseTest.java:33)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-	at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:62)
-	at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:385)
-	at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:321)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:344)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-	at org.testng.TestNG.runSuites(TestNG.java:1063)
-	at org.testng.TestNG.run(TestNG.java:1031)
-	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:77)
-	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:159)
-	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:99)
-	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:106)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
-	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
-	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
-	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
-</failure>
-    <system-out>[INFO ] 2021-10-05 09:43:33 [main] BaseTest - LoginTest tests have been executed.
-[INFO ] 2021-10-05 09:43:34 [main] BaseTest - This is to track the suite completion time
-</system-out>
-    <system-err>1633412613380	Marionette	INFO	Stopped listening on port 60303
-JavaScript error: resource:///modules/Interactions.jsm, line 209: NS_ERROR_FAILURE: Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIUserIdleService.removeIdleObserver]
-
-###!!! [Parent][MessageChannel] Error: (msgtype=0x390076,name=PContent::Msg_DestroyBrowsingContextGroup) Closed channel: cannot send/recv
-
-JavaScript error: resource://gre/modules/Sqlite.jsm, line 1030: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\tatevik.navasardyan\AppData\Local\Temp\rust_mozprofiletkQ6O3\protections.sqlite
-
-###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
-
-</system-err>
-  </testcase>
+  <testcase classname="ChangePasswordTest" name="ParallelTesting" time="0.006"/>
+  <testcase classname="ChangePasswordTest" name="ParallelTesting2" time="0.001"/>
+  <testcase classname="LoginTest" name="ShouldBeAbleToChangePassword" time="16.489"/>
+  <testcase classname="LoginTest" name="ShouldLoginWithValidCredentials" time="1.77"/>
+  <testcase classname="LoginTest" name="ShouldNotLoginWithInvalidCredentials" time="0.941"/>
 </testsuite>

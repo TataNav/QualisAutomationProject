@@ -1,5 +1,6 @@
 import General.ConfigFileReader;
 import General.Helper;
+import PageObjects.ForgotPasswordPage;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
@@ -8,11 +9,14 @@ import org.testng.annotations.Test;
 import General.BaseTest;
 import PageObjects.LoginPage;
 
+import javax.mail.MessagingException;
 import java.io.IOException;
+import java.security.GeneralSecurityException;
 
 public class LoginTest extends BaseTest{
     private LoginPage loginPg;
     public WebDriver driver;
+    protected String url = ConfigFileReader.getURL();
 
     @BeforeClass()
     public void initLoginPage(){
@@ -21,80 +25,48 @@ public class LoginTest extends BaseTest{
         loginPg = new LoginPage(driver);
     }
 
-    @Test()
+    @Test
+    public void ShouldBeAbleToChangePassword() throws GeneralSecurityException, InterruptedException, MessagingException, IOException {
+        String userToChangePasswordFor = "forgot password user";
+        String newPassword = "newPT_" + Helper.GenerateRandomNumber() + "*" + Helper.GenerateRandomNumber();
+        String[] userCredentials = Helper.ReadDataFromExcel(userToChangePasswordFor);
+        ForgotPasswordPage changePass = loginPg.ResetPassword();
+        changePass.InsertEmailAddress(userCredentials[0]);
+        Thread.sleep(2000);
+        changePass.goNext();
+        Assert.assertEquals(changePass.GetNotificationText(), "Verification code sent to the registered email id");
+        Thread.sleep(2000);
+        String confirmationCode = Helper.GetForgotPasswordConfirmationCode();
+        changePass.InsertConfirmationCode(confirmationCode);
+        changePass.InsertAndConfirmNewPassword(newPassword);
+        Helper.UpdatePasswordInExcel(userToChangePasswordFor, newPassword);
+        changePass.SubmitNewPassword();
+        //Assert.assertEquals(changePass.GetNotificationText(), "Password Update Successful! Please Login with the new Password!");
+        Assert.assertEquals(changePass.GetNotificationText(), "Registration successful, pls login with the New password");
+        userCredentials = Helper.ReadDataFromExcel(userToChangePasswordFor);
+        loginPg.EnterUsername(userCredentials[0]);
+        loginPg.EnterPassword(userCredentials[1]);
+        loginPg.SignIn();
+        Assert.assertEquals(loginPg.getLandingPage().getPage_Title().getText(), "Superuser");
+        loginPg.getLandingPage().GoToLoggedInUserSettingsToLogout();
+        Thread.sleep(2000);
+    }
+
+    @Test
     public void ShouldLoginWithValidCredentials() throws IOException {
         loginPg.EnterUsername(Helper.ReadDataFromExcel("superuser")[0]);
         loginPg.EnterPassword(Helper.ReadDataFromExcel("superuser")[1]);
         loginPg.SignIn();
         Assert.assertEquals(loginPg.getLandingPage().getPage_Title().getText(), "Superuser");
+        loginPg.getLandingPage().GoToLoggedInUserSettingsToLogout();
     }
 
-    @Test(dependsOnMethods = "Logout")
+    @Test
     public void ShouldNotLoginWithInvalidCredentials() {
         loginPg.EnterUsername("Test@test");
         loginPg.EnterPassword("pass1234");
         loginPg.SignIn();
         Assert.assertEquals("The username or password you have entered is invalid.", loginPg.ValidateCredentials());
-    }
-
-    @Test
-    public void NavigateThroughAllPages() throws IOException {
-        loginPg.EnterUsername("tatevik.navasardyan@praemium.com");
-        loginPg.EnterPassword("Drwho!1Qualis");
-        loginPg.SignIn();
-
-        //Assert.assertEquals(loginPg.getLandingPage().GoToDashboard(), "Dashboard");
-
-        Assert.assertEquals(loginPg.getLandingPage().GoToFundsPage(), "Funds");
-
-        Assert.assertEquals(loginPg.getLandingPage().GoToHoldingsPage(), "Holdings");
-
-        Assert.assertEquals(loginPg.getLandingPage().GoToOrdersPage(), "Orders");
-
-        //Assert.assertEquals(lp.getHomePage().GoToInvestorsApprovalPage(), "Investors");//this should be changed later to - "Approval Requested Investors"
-
-        //Assert.assertEquals(lp.getHomePage().GoToFundApprovalPage(), "Fund Approval");
-
-        Assert.assertEquals(loginPg.getLandingPage().GoToUserManagementPage(), "User");//this should be changed later to - "User"
-
-        Assert.assertEquals(loginPg.getLandingPage().GoToRoleAccessPage(), "Role");
-
-        Assert.assertEquals(loginPg.getLandingPage().GoToTeamManagementPage(), "Team");
-
-        Assert.assertEquals(loginPg.getLandingPage().GoToFundApprovalPage(), "Fund Approval");
-
-        Assert.assertEquals(loginPg.getLandingPage().GoToActivityLogsPage(), "Activity Logs");
-
-        //Assert.assertEquals(loginPg.getLandingPage().GoToAPLPage(), "APL");
-
-        //Assert.assertEquals(loginPg.getLandingPage().GoToEventsPage(), "Events");
-
-        Assert.assertEquals(loginPg.getLandingPage().GoToOrganizationPage(), "Organization");
-        loginPg.getLandingPage().GoToLoggedInUserSettingsToLogout();
-    }
-
-    @Test(dependsOnMethods = "ShouldLoginWithValidCredentials")
-    public void ChangePassword() throws IOException {
-        Assert.assertEquals(loginPg.getLandingPage().GoToLoggedInUserSettingsToChangePassword(), "Change Password");
-        loginPg.getLandingPage().GoToLoggedInUserSettingsToLogout();
-    }
-
-    public void CheckNotifications() throws IOException {
-        loginPg.getLandingPage().GetOrdersNotifications();
-        loginPg.getLandingPage().GetFundsNotifications();
-        loginPg.getLandingPage().GoToLoggedInUserSettingsToChangePassword();
-        Assert.assertEquals(loginPg.getLandingPage().GoToLoggedInUserSettingsToChangePassword(), "Change Password");
-        loginPg.getLandingPage().GoToLoggedInUserSettingsToLogout();
-        loginPg.getLandingPage().GoToLoggedInUserSettingsToLogout();
-    }
-
-    @Test
-    public void Logout() throws IOException {
-        loginPg.EnterUsername("autoqualissuperuser@praemium.com");
-        loginPg.EnterPassword("QS@superuserPSS123!");
-        loginPg.SignIn();
-        loginPg.getLandingPage().GoToLoggedInUserSettingsToLogout();
-        //Assert.assertEquals(getDriver().getCurrentUrl(), driver.get(ConfigFileReader.getURL()));
     }
 
     @AfterClass

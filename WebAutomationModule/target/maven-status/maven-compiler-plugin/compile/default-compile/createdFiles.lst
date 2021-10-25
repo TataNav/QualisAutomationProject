@@ -1,4 +1,9 @@
 General\Helper.class
 General\BasePage.class
+PageObjects\ChangePasswordPage.class
+PageObjects\LoginPage.class
 General\ConfigFileReader.class
+PageObjects\ForgotPasswordPage.class
+PageObjects\LandingPage.class
+General\Listeners.class
 General\BaseTest.class

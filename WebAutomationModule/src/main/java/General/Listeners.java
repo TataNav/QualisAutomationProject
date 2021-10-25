@@ -16,7 +16,7 @@ import java.io.IOException;
 
 public class Listeners implements ITestListener {
     ExtentTest test;
-    ExtentReports extent = Helper.getReportObject();
+    ExtentReports extent = Helper.GetReportObject();
     ThreadLocal<ExtentTest> extentTest = new ThreadLocal<ExtentTest>();
 
     @Override

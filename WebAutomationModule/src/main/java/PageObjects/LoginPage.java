@@ -15,8 +15,12 @@ public class LoginPage {
     private WebElement password;
     @FindBy(css = "button[type = 'submit'")
     private WebElement signInBtn;
-    @FindBy(xpath = "/html/body/app-root/notifier-container/ul/li/notifier-notification/p")
+    @FindBy(xpath = "//ul/li/notifier-notification/p")
     private WebElement notification;
+    @FindBy(xpath = "//a[contains(text(),'Forgot password?')]")
+    private WebElement forgotPass;
+    @FindBy(tagName = "input")
+    private WebElement rememberMe;
 
     public LoginPage(WebDriver driver) {
         this.driver = driver;
@@ -38,6 +42,12 @@ public class LoginPage {
         landingPage.waitForElementToAppear(password);
         password.clear();
         password.sendKeys(pass);
+    }
+
+    public ForgotPasswordPage ResetPassword(){
+        landingPage.waitForElementToAppear(forgotPass);
+        forgotPass.click();
+        return new ForgotPasswordPage(driver);
     }
 
     public void SignIn(){

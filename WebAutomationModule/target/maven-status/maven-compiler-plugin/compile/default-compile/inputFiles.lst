@@ -1,4 +1,5 @@
 C:\source\QualisAutomationProject\WebAutomationModule\src\main\java\General\Helper.java
+C:\source\QualisAutomationProject\WebAutomationModule\src\main\java\PageObjects\ForgotPasswordPage.java
 C:\source\QualisAutomationProject\WebAutomationModule\src\main\java\PageObjects\LoginPage.java
 C:\source\QualisAutomationProject\WebAutomationModule\src\main\java\PageObjects\LandingPage.java
 C:\source\QualisAutomationProject\WebAutomationModule\src\main\java\General\BasePage.java
@@ -6,3 +7,4 @@ C:\source\QualisAutomationProject\WebAutomationModule\src\main\java\General\Base
 C:\source\QualisAutomationProject\WebAutomationModule\src\main\java\General\ConfigFileReader.java
 C:\source\QualisAutomationProject\WebAutomationModule\src\main\java\General\Listeners.java
 C:\source\QualisAutomationProject\WebAutomationModule\src\main\java\PageObjects\ChangePasswordPage.java
+C:\source\QualisAutomationProject\WebAutomationModule\src\main\java\General\EntryPoint.java

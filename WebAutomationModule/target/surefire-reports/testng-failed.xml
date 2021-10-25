@@ -5,6 +5,7 @@
     <classes>
       <class name="LoginTest">
         <methods>
+          <include name="ShouldBeAbleToChangePassword"/>
           <include name="ChangePassword"/>
           <include name="CloseDriverAfterEachClassExecution"/>
           <include name="NavigateThroughAllPages"/>
