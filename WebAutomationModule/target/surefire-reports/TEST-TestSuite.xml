@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="5" failures="0" name="TestSuite" time="19.207" errors="0" skipped="0">
+<testsuite tests="5" failures="0" name="TestSuite" time="25.802" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_291\jre\bin"/>
@@ -70,8 +70,8 @@
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
   <testcase classname="ChangePasswordTest" name="ParallelTesting" time="0.006"/>
-  <testcase classname="ChangePasswordTest" name="ParallelTesting2" time="0.001"/>
-  <testcase classname="LoginTest" name="ShouldBeAbleToChangePassword" time="16.489"/>
-  <testcase classname="LoginTest" name="ShouldLoginWithValidCredentials" time="1.77"/>
-  <testcase classname="LoginTest" name="ShouldNotLoginWithInvalidCredentials" time="0.941"/>
+  <testcase classname="ChangePasswordTest" name="ParallelTesting2" time="0"/>
+  <testcase classname="LoginTest" name="ShouldBeAbleToChangePassword" time="21.721"/>
+  <testcase classname="LoginTest" name="ShouldLoginWithValidCredentials" time="2.659"/>
+  <testcase classname="LoginTest" name="ShouldNotLoginWithInvalidCredentials" time="1.416"/>
 </testsuite>
