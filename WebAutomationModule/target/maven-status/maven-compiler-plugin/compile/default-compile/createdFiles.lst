@@ -1,7 +1,6 @@
 General\Helper.class
 General\BasePage.class
 PageObjects\ChangePasswordPage.class
-General\EntryPoint.class
 PageObjects\LoginPage.class
 General\ConfigFileReader.class
 PageObjects\ForgotPasswordPage.class

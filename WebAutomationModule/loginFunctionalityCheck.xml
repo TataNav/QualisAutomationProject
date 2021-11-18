@@ -6,6 +6,7 @@
     <test name="Login Functionality Regression">
         <classes>
             <class name="LoginTest"/>
+            <class name="OrdersCRUDActionsCheck"/>
         </classes>
     </test>
 </suite>

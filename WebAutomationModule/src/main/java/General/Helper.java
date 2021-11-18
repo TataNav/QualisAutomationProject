@@ -7,10 +7,17 @@ import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import sun.misc.IOUtils;
 
 import javax.mail.*;
 import javax.mail.internet.MimeMessage;
 import javax.mail.search.FlagTerm;
+import java.awt.*;
+import java.awt.datatransfer.StringSelection;
+import java.awt.event.KeyEvent;
 import java.io.*;
 import java.security.GeneralSecurityException;
 import java.time.LocalDate;
@@ -170,6 +177,23 @@ public class Helper {
         firstIndexOfSubstring = mainString.indexOf(substring);
         indexOfSpecificCharInSubstring = substring.lastIndexOf(charToGetIndexFor);
         return firstIndexOfSubstring + indexOfSpecificCharInSubstring;
+    }
+
+    public static void FileUpload_Robo(String filepath) throws AWTException {
+        Robot robot = new Robot();
+        //ctrl C
+        StringSelection stringSelection = new StringSelection(filepath);
+        Toolkit.getDefaultToolkit().getSystemClipboard().setContents(stringSelection, null);
+        robot.setAutoDelay(2000);
+        //ctrl V
+        robot.keyPress(KeyEvent.VK_CONTROL);
+        robot.keyPress(KeyEvent.VK_V);
+        robot.keyRelease(KeyEvent.VK_CONTROL);
+        robot.keyRelease(KeyEvent.VK_V);
+        robot.setAutoDelay(2000);
+        //press enter after choosing the file
+        robot.keyPress(KeyEvent.VK_ENTER);
+        robot.keyRelease(KeyEvent.VK_ENTER);
     }
 }
 

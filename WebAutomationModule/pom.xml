@@ -101,5 +101,11 @@
             <version>3.12.0</version>
         </dependency>
 
+        <dependency>
+            <groupId>de.openkeyword</groupId>
+            <artifactId>autoit</artifactId>
+            <version>0.0.15</version>
+        </dependency>
+
     </dependencies>
 </project>

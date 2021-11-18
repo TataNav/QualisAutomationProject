@@ -1,9 +1,12 @@
 package PageObjects;
 
+import General.Helper;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+
+import java.io.IOException;
 
 public class LoginPage {
     private LandingPage landingPage;
@@ -51,12 +54,18 @@ public class LoginPage {
     }
 
     public void SignIn(){
-        landingPage.waitForElementToAppear(signInBtn);
+        landingPage.waitForElementIsClickable(signInBtn);
         signInBtn.click();
     }
 
     public String ValidateCredentials(){
         landingPage.waitForElementToAppear(notification);
         return notification.getText();
+    }
+
+    public void LoginAs(String loginUser) throws IOException {
+        EnterUsername(Helper.ReadDataFromExcel(loginUser)[0]);
+        EnterPassword(Helper.ReadDataFromExcel(loginUser)[1]);
+        SignIn();
     }
 }
