@@ -19,53 +19,44 @@ public class LoginTest extends BaseTest{
     protected String url = ConfigFileReader.getURL();
 
     @BeforeClass()
-    public void initLoginPage(){
+    public void LoginTestSetup(){
         driver = getDriver();
         driver.get(url);
         loginPg = new LoginPage(driver);
     }
 
     @Test
-    public void ShouldBeAbleToChangePassword() throws GeneralSecurityException, InterruptedException, MessagingException, IOException {
-        String userToChangePasswordFor = "forgot password user";
+    public void ResetPassword() throws InterruptedException, MessagingException, IOException {
+        String resetPassUser = "forgot password user";
         String newPassword = "newPT_" + Helper.GenerateRandomNumber() + "*" + Helper.GenerateRandomNumber();
-        String[] userCredentials = Helper.ReadDataFromExcel(userToChangePasswordFor);
         ForgotPasswordPage changePass = loginPg.ResetPassword();
-        changePass.InsertEmailAddress(userCredentials[0]);
-        Thread.sleep(2000);
+        changePass.InsertEmailAddress(Helper.ReadDataFromExcel(resetPassUser)[0]);
         changePass.goNext();
+        Thread.sleep(500);
         Assert.assertEquals(changePass.GetNotificationText(), "Verification code sent to the registered email id");
-        Thread.sleep(2000);
+        Thread.sleep(500);
         String confirmationCode = Helper.GetForgotPasswordConfirmationCode();
         changePass.InsertConfirmationCode(confirmationCode);
         changePass.InsertAndConfirmNewPassword(newPassword);
-        Helper.UpdatePasswordInExcel(userToChangePasswordFor, newPassword);
+        Helper.UpdatePasswordInExcel(resetPassUser, newPassword);
         changePass.SubmitNewPassword();
-        //Assert.assertEquals(changePass.GetNotificationText(), "Password Update Successful! Please Login with the new Password!");
         Assert.assertEquals(changePass.GetNotificationText(), "Registration successful, pls login with the New password");
-        userCredentials = Helper.ReadDataFromExcel(userToChangePasswordFor);
-        loginPg.EnterUsername(userCredentials[0]);
-        loginPg.EnterPassword(userCredentials[1]);
-        loginPg.SignIn();
+        loginPg.LoginAs(resetPassUser);
         Assert.assertEquals(loginPg.getLandingPage().getPage_Title().getText(), "Superuser");
         loginPg.getLandingPage().GoToLoggedInUserSettingsToLogout();
-        Thread.sleep(2000);
+        Thread.sleep(500);
     }
 
     @Test
-    public void ShouldLoginWithValidCredentials() throws IOException {
-        loginPg.EnterUsername(Helper.ReadDataFromExcel("superuser")[0]);
-        loginPg.EnterPassword(Helper.ReadDataFromExcel("superuser")[1]);
-        loginPg.SignIn();
+    public void LoginWithValidCredentials() throws IOException {
+        loginPg.LoginAs("superuser");
         Assert.assertEquals(loginPg.getLandingPage().getPage_Title().getText(), "Superuser");
         loginPg.getLandingPage().GoToLoggedInUserSettingsToLogout();
     }
 
     @Test
-    public void ShouldNotLoginWithInvalidCredentials() {
-        loginPg.EnterUsername("Test@test");
-        loginPg.EnterPassword("pass1234");
-        loginPg.SignIn();
+    public void LoginWithInvalidCredentials() throws IOException {
+        loginPg.LoginAs("invalid user");
         Assert.assertEquals("The username or password you have entered is invalid.", loginPg.ValidateCredentials());
     }
 

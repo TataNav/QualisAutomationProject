@@ -10,14 +10,18 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.io.IOException;
+import java.util.List;
 
 public class LandingPage extends BasePage {
     Actions action = new Actions(driver);
 
+    //TODO page title can't be located
     //Page title
-    @FindBy(tagName = "h3")
+    @FindBy(css = "h3")
     private WebElement page_Title;
-
+    @FindBy(xpath = "//notifier-container/ul/li")
+    private List<WebElement> notifications;
+    //TODO change below xpath-s to linkText locator
     //Top bar elements
     @FindBy(xpath = "//div/header/div[2]/div[2]/button/span")
     private WebElement notifyBtn;
@@ -182,7 +186,6 @@ public class LandingPage extends BasePage {
         waitForElementToAppear(notifyBtn);
         notifyBtn.click();
         waitForElementToAppear(ordersNotifyTab);
-        //action.moveToElement(ordersNotifyTab).click().build().perform();
     }
 
     public void GetFundsNotifications(){
@@ -194,7 +197,14 @@ public class LandingPage extends BasePage {
         action.moveToElement(fundsNotifyTab).click().build().perform();
     }
 
+    public void CloseNotification() throws InterruptedException {
+        while(notifications.size() > 0){
+            Thread.sleep(200);
+        }
+    }
+
     public WebElement getPage_Title(){
         return page_Title;
     }
+
 }
