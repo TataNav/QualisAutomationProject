@@ -12,17 +12,22 @@ import PageObjects.LoginPage;
 import javax.mail.MessagingException;
 import java.io.IOException;
 import java.security.GeneralSecurityException;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 public class LoginTest extends BaseTest{
     private LoginPage loginPg;
     public WebDriver driver;
-    protected String url = ConfigFileReader.getURL();
+    private String url = ConfigFileReader.getURL();
+    private Statement statement;
 
     @BeforeClass()
-    public void LoginTestSetup(){
+    public void LoginTestSetup() throws SQLException {
         driver = getDriver();
         driver.get(url);
         loginPg = new LoginPage(driver);
+        connection = Helper.ConnectToDatabase();
+        statement = connection.createStatement();
     }
 
     @Test
@@ -32,7 +37,7 @@ public class LoginTest extends BaseTest{
         ForgotPasswordPage changePass = loginPg.ResetPassword();
         changePass.InsertEmailAddress(Helper.ReadDataFromExcel(resetPassUser)[0]);
         changePass.goNext();
-        Thread.sleep(500);
+        Thread.sleep(1000);
         Assert.assertEquals(changePass.GetNotificationText(), "Verification code sent to the registered email id");
         Thread.sleep(500);
         String confirmationCode = Helper.GetForgotPasswordConfirmationCode();

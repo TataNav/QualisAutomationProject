@@ -5,7 +5,11 @@
     </listeners>
     <test name="Login Functionality Regression">
         <classes>
-            <class name="LoginTest"/>
+            <class name="LoginTest">
+                <methods>
+                    <exclude name="ResetPassword"></exclude>
+                </methods>
+            </class>
             <class name="OrdersCRUDActionsCheck"/>
         </classes>
     </test>

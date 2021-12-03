@@ -1,49 +1,32 @@
 package General;
 
-import PageObjects.LoginPage;
-import PageObjects.OrdersPage;
-import org.omg.CORBA.TIMEOUT;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.FindBy;
-import org.testng.Assert;
-
 import javax.mail.MessagingException;
 import java.io.IOException;
 import java.security.GeneralSecurityException;
-import java.time.Duration;
-import java.util.List;
-import java.util.concurrent.TimeUnit;
+import java.sql.*;
+import java.sql.DriverManager;
 
 public class EntryPoint {
     public static void main(String[] args) throws GeneralSecurityException, MessagingException, IOException, InterruptedException {
-        System.setProperty("webdriver.chrome.driver", "/C:/source/QualisAutomationProject/WebAutomationModule/src/main/resources/drivers/chromedriver.exe");
-        WebDriver driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(2000, TimeUnit.SECONDS);
-        driver.get("https://www.qualis-test.com/#/login");
-        LoginPage lp = new LoginPage(driver);
-        lp.EnterUsername("autoqualissuperuser@praemium.com");
-        lp.EnterPassword("QS@superuserPSS123!");
-        lp.SignIn();
-        Thread.sleep(5000);
-        lp.getLandingPage().GoToOrdersPage();
-        OrdersPage op = new OrdersPage(driver);
-        op.AddNewOrder();
-
-        /*
-        Assert.assertEquals(driver.getCurrentUrl(), "https://www.qualis-test.com/#/superuser");
-        lp.getLandingPage().GoToOrdersPage();
-        lp.getLandingPage().waitForElementIsClickable(lp.getLandingPage().getPage_Title());
-        Thread.sleep(5000);
-        Assert.assertEquals(driver.getCurrentUrl(), "https://www.qualis-test.com/#/orders");
-        List<WebElement> listOfOrders = driver.findElements(By.id("listTable"));
-        System.out.println(listOfOrders.size());
-        List<WebElement> orders = driver.findElements(By.xpath("//*[@id = 'listTable']/mat-row"));
-        System.out.println("orders " + orders.size());
-        Assert.assertEquals(driver.getCurrentUrl(), "https://www.qualis-test.com/#/newOrder");
-        */
+        System.out.println("MySQL Connect Example.");
+        Connection conn = null;
+        String url = "jdbc:mysql://qualistestdb.cxfffvyuewsj.us-east-2.rds.amazonaws.com:3306/qualis_testdb";
+        String driver = "com.mysql.jdbc.Driver";
+        String userName = "admin";
+        String password = "qualistestdb$123";
+        try {
+            //loads the driver
+            Class.forName(driver).newInstance();
+            conn = DriverManager.getConnection(url,userName,password);
+            System.out.println("Connected to the database");
+            Statement statement = conn.createStatement();
+            ResultSet results = statement.executeQuery("SELECT  * FROM qualis_testdb.qaip_order_mgmt where created_date > '2021-11-17'");
+            results.next();
+            System.out.println(results.getString("order_id"));
+            conn.close();
+            System.out.println("Disconnected from database");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

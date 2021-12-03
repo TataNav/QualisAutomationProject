@@ -12,21 +12,27 @@ import org.testng.annotations.Test;
 
 import java.awt.*;
 import java.io.IOException;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 public class OrdersCRUDActionsCheck extends BaseTest {
     private OrdersPage ordersPg;
-    private WebDriver driver;
+    public WebDriver driver;
     protected String url = ConfigFileReader.getURL();
     private LoginPage loginPg;
     Actions actions;
+    private Statement statement;
 
     @BeforeClass()
-    public void OrdersTestSetup(){
+    public void OrdersTestSetup() throws SQLException {
         driver = getDriver();
         driver.get(url);
         ordersPg = new OrdersPage(driver);
         loginPg = new LoginPage(driver);
         actions = new Actions(driver);
+        connection = Helper.ConnectToDatabase();
+        statement = connection.createStatement();
     }
 
     private void ChangeOrderStatus(String loginUser, String statusToCheck, String action) throws InterruptedException, IOException {
@@ -45,7 +51,7 @@ public class OrdersCRUDActionsCheck extends BaseTest {
     }
 
     @Test
-    public void CreateRedemptionOrder() throws IOException, InterruptedException, AWTException {
+    public void CreateRedemptionOrder() throws IOException, InterruptedException, AWTException, SQLException {
         String eventType = "redemption";
         String redemptionType = "Full Redemption";
         loginPg.LoginAs("finadviser");
@@ -81,6 +87,10 @@ public class OrdersCRUDActionsCheck extends BaseTest {
         ChangeOrderStatus("fund manager","Funds Transferred", "Confirm Funds Received");
         ordersPg.FilterCompletedOrder();
         Assert.assertEquals(ordersPg.GetStatusOfOrder(), "Order Completed");
+        String query = "SELECT order_id FROM qualis_testdb.qaip_order_mgmt order by order_id desc Limit 1";
+        ResultSet orders = statement.executeQuery(query);
+        orders.next();
+        Assert.assertEquals(ordersPg.GetOrderId(), orders.getString("order_id"));
     }
     @AfterClass
     public void CloseDriverAfterEachClassExecution(){

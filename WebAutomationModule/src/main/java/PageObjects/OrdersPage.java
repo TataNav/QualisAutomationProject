@@ -210,8 +210,13 @@ public class OrdersPage {
         landingPage.waitForElementIsClickable(lastUpdatedAt);
         landingPage.waitForElementIsClickable(lastOrder);
         driver.navigate().refresh();
-        String status = orderCells.get(7).getText();
-        return status;
+        return orderCells.get(7).getText();
+    }
+
+    public String GetOrderId() {
+        landingPage.waitForElementIsClickable(lastUpdatedAt);
+        landingPage.waitForElementIsClickable(lastOrder);
+        return orderCells.get(0).getText();
     }
 
     public String GetNotification(){
