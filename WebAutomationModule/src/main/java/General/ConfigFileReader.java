@@ -17,6 +17,7 @@ public class ConfigFileReader {
     private static int implicitlyWait;
     private static WebDriver driver;
     private static String projectPath;
+    private static String hostname;
 
     private static String getBrowserName(){
         //there is an option to send the browser name from cmd
@@ -109,7 +110,7 @@ public class ConfigFileReader {
     public static String getProjectPath(){
         projectPath = properties.getProperty("projectPath");
         if (projectPath != null) return projectPath;
-        else throw new RuntimeException("No project path has been defined");
+        else throw new RuntimeException("No project path has been defined.");
     }
 
     public static String getURL(){
@@ -119,9 +120,36 @@ public class ConfigFileReader {
     public static String getShortenedURL() {
         return initializeShortenedURL();
     }
-/*
-    public static String getTestEnv(){
-        return getEnv();
+
+    public static String GetHostname(){
+        try{
+            return properties.getProperty("hostname");
+        } catch (Exception e){
+            throw new RuntimeException("There is no hostname defined.");
+        }
     }
- */
+
+    public static String GetDatabaseUsername(){
+        try{
+            return properties.getProperty("usernameDB");
+        } catch (Exception e){
+            throw new RuntimeException("There is no username defined.");
+        }
+    }
+
+    public static String GetDatabasePassword(){
+        try{
+            return properties.getProperty("passwordDB");
+        } catch (Exception e){
+            throw new RuntimeException("There is no password defined.");
+        }
+    }
+
+    public static String GetDatabaseDriver(){
+        try{
+            return properties.getProperty("driver");
+        } catch (Exception e){
+            throw new RuntimeException("There is no database driver defined.");
+        }
+    }
 }

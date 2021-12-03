@@ -2,16 +2,12 @@ package General;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
-import com.sun.mail.util.MailSSLSocketFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.remote.DesiredCapabilities;
-import sun.misc.IOUtils;
-
 import javax.mail.*;
 import javax.mail.internet.MimeMessage;
 import javax.mail.search.FlagTerm;
@@ -19,10 +15,8 @@ import java.awt.*;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
 import java.io.*;
-import java.security.GeneralSecurityException;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.util.Date;
+import java.sql.Connection;
+import java.sql.DriverManager;
 import java.util.Iterator;
 import java.util.Properties;
 import java.util.Random;
@@ -36,6 +30,7 @@ public class Helper {
     private static String username = "qataskdemoaccnt@gmail.com";
     private static String password = "!Qualis1_1";
     private static String hostName = "imap.gmail.com";
+    protected static Logger logger = LogManager.getLogger(BaseTest.class.getName());
 
     //to initialize property file to get general configs
     public static Properties InitializePropertyFile() {
@@ -194,6 +189,22 @@ public class Helper {
         //press enter after choosing the file
         robot.keyPress(KeyEvent.VK_ENTER);
         robot.keyRelease(KeyEvent.VK_ENTER);
+    }
+
+    public static Connection ConnectToDatabase(){
+        String hostname = ConfigFileReader.GetHostname();
+        String username = ConfigFileReader.GetDatabaseUsername();
+        String password = ConfigFileReader.GetDatabasePassword();
+        String driver = ConfigFileReader.GetDatabaseDriver();
+        Connection connection = null;
+        try {
+            Class.forName(driver).newInstance();
+            connection = DriverManager.getConnection(hostname,username,password);
+            logger.info("Connected to the database.");
+            return connection;
+        } catch (Exception e) {
+            throw new RuntimeException("Unable to establish connection.");
+        }
     }
 }
 

@@ -6,16 +6,19 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.*;
 
+import java.sql.Connection;
+import java.sql.SQLException;
 import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 public class BaseTest {
     protected static Logger logger = LogManager.getLogger(BaseTest.class.getName());
     private WebDriver driver;
+    protected Connection connection = null;
 
     @BeforeSuite
     public void beforeSuite(){
-        logger.info("This is to track the suite execution start time");
+        logger.info("Start the test suite execution");
     }
 
     @BeforeClass
@@ -28,11 +31,13 @@ public class BaseTest {
     }
 
     @AfterSuite
-    public void afterSuite(){
-        logger.info("This is to track the suite completion time");
+    public void afterSuite() throws SQLException {
+        logger.info("The test suite execution has just completed.");
         if(driver != null){
             driver.quit();
         }
+        connection.close();
+        logger.info("Disconnected from the database.");
     }
 
     public WebDriver getDriver() {

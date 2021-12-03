@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>4/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Tue Nov 09 23:15:05 AMT 2021</td>
+<td>Started on:</td><td>Fri Dec 03 16:56:49 AMT 2021</td>
 </tr>
-<tr><td>Total time:</td><td>81 seconds (81070 ms)</td>
+<tr><td>Total time:</td><td>57 seconds (57540 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -75,49 +75,42 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='LoginTest.ShouldNotLoginWithInvalidCredentials()'><b>ShouldNotLoginWithInvalidCredentials</b><br>Test class: LoginTest</td>
-<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator &apos;By.cssSelector: h3&apos; (tried for 10 second(s) with 100 milliseconds interval)
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
-	at General.BasePage.waitForElementToAppear(BasePage.java:23)
-	at PageObjects.LoginPage.SignIn(LoginPage.java:56)
-	at LoginTest.ShouldNotLoginWithInvalidCredentials(LoginTest.java:68)
+<td title='LoginTest.ResetPassword()'><b>ResetPassword</b><br>Test class: LoginTest</td>
+<td><div><pre>com.sun.mail.util.MailConnectException: Couldn&apos;t connect to host, port: imap.gmail.com, 993; timeout -1;
+  nested exception is:
+	java.net.ConnectException: Connection timed out: connect
+	at com.sun.mail.imap.IMAPStore.protocolConnect(IMAPStore.java:740)
+	at javax.mail.Service.connect(Service.java:366)
+	at javax.mail.Service.connect(Service.java:246)
+	at General.Helper.GetForgotPasswordConfirmationCode(Helper.java:125)
+	at LoginTest.ResetPassword(LoginTest.java:43)
 	at java.util.ArrayList.forEach(ArrayList.java:1259)
-Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;h3&quot;}
-  (Session info: chrome=95.0.4638.69)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;AMMQA10&apos;, ip: &apos;192.168.1.134&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_291&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 95.0.4638.69, chrome: {chromedriverVersion: 95.0.4638.10 (970bcf99e2bb6..., userDataDir: C:\Users\TATEVI~1.NAV\AppDa...}, goog:chromeOptions: {debuggerAddress: localhost:55936}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 5da4bc2b603513a5d3e3abc35d13ea41
-*** Element info: {Using=css selector, value=h3}
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByCssSelector(RemoteWebDriver.java:420)
-	at org.openqa.selenium.By$ByCssSelector.findElement(By.java:431)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at com.sun.proxy.$Proxy25.isDisplayed(Unknown Source)
-	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:314)
-	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:43)
-	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:300)
-	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:297)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
-	... 41 more
-... Removed 41 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace393183035", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace393183035'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator &apos;By.cssSelector: h3&apos; (tried for 10 second(s) with 100 milliseconds interval)
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
-	at General.BasePage.waitForElementToAppear(BasePage.java:23)
-	at PageObjects.LoginPage.SignIn(LoginPage.java:56)
-	at LoginTest.ShouldNotLoginWithInvalidCredentials(LoginTest.java:68)
+Caused by: java.net.ConnectException: Connection timed out: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:75)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:476)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:218)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:200)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:162)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:394)
+	at java.net.Socket.connect(Socket.java:606)
+	at java.net.Socket.connect(Socket.java:555)
+	at com.sun.mail.util.SocketFetcher.createSocket(SocketFetcher.java:359)
+	at com.sun.mail.util.SocketFetcher.getSocket(SocketFetcher.java:238)
+	at com.sun.mail.iap.Protocol.&lt;init&gt;(Protocol.java:134)
+	at com.sun.mail.imap.protocol.IMAPProtocol.&lt;init&gt;(IMAPProtocol.java:131)
+	at com.sun.mail.imap.IMAPStore.newIMAPProtocol(IMAPStore.java:763)
+	at com.sun.mail.imap.IMAPStore.protocolConnect(IMAPStore.java:698)
+	... 42 more
+... Removed 37 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace934640468", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace934640468'><pre>com.sun.mail.util.MailConnectException: Couldn&apos;t connect to host, port: imap.gmail.com, 993; timeout -1;
+  nested exception is:
+	java.net.ConnectException: Connection timed out: connect
+	at com.sun.mail.imap.IMAPStore.protocolConnect(IMAPStore.java:740)
+	at javax.mail.Service.connect(Service.java:366)
+	at javax.mail.Service.connect(Service.java:246)
+	at General.Helper.GetForgotPasswordConfirmationCode(Helper.java:125)
+	at LoginTest.ResetPassword(LoginTest.java:43)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -156,41 +149,26 @@ Session ID: 5da4bc2b603513a5d3e3abc35d13ea41
 	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
-Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;h3&quot;}
-  (Session info: chrome=95.0.4638.69)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;AMMQA10&apos;, ip: &apos;192.168.1.134&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_291&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 95.0.4638.69, chrome: {chromedriverVersion: 95.0.4638.10 (970bcf99e2bb6..., userDataDir: C:\Users\TATEVI~1.NAV\AppDa...}, goog:chromeOptions: {debuggerAddress: localhost:55936}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 5da4bc2b603513a5d3e3abc35d13ea41
-*** Element info: {Using=css selector, value=h3}
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByCssSelector(RemoteWebDriver.java:420)
-	at org.openqa.selenium.By$ByCssSelector.findElement(By.java:431)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at com.sun.proxy.$Proxy25.isDisplayed(Unknown Source)
-	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:314)
-	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:43)
-	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:300)
-	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:297)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
-	... 41 more
+Caused by: java.net.ConnectException: Connection timed out: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:75)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:476)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:218)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:200)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:162)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:394)
+	at java.net.Socket.connect(Socket.java:606)
+	at java.net.Socket.connect(Socket.java:555)
+	at com.sun.mail.util.SocketFetcher.createSocket(SocketFetcher.java:359)
+	at com.sun.mail.util.SocketFetcher.getSocket(SocketFetcher.java:238)
+	at com.sun.mail.iap.Protocol.&lt;init&gt;(Protocol.java:134)
+	at com.sun.mail.imap.protocol.IMAPProtocol.&lt;init&gt;(IMAPProtocol.java:131)
+	at com.sun.mail.imap.IMAPStore.newIMAPProtocol(IMAPStore.java:763)
+	at com.sun.mail.imap.IMAPStore.protocolConnect(IMAPStore.java:698)
+	... 42 more
 </pre></div></td>
-<td>30</td>
-<td>LoginTest@1a942c18</td></tr>
+<td>24</td>
+<td>LoginTest@63376bed</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
@@ -200,25 +178,25 @@ Session ID: 5da4bc2b603513a5d3e3abc35d13ea41
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='LoginTest.ShouldLoginWithValidCredentials()'><b>ShouldLoginWithValidCredentials</b><br>Test class: LoginTest</td>
+<td title='ChangePasswordTest.ParallelTesting()'><b>ParallelTesting</b><br>Test class: ChangePasswordTest</td>
 <td></td>
-<td>2</td>
-<td>LoginTest@1a942c18</td></tr>
+<td>0</td>
+<td>ChangePasswordTest@1e6a3214</td></tr>
 <tr>
 <td title='ChangePasswordTest.ParallelTesting2()'><b>ParallelTesting2</b><br>Test class: ChangePasswordTest</td>
 <td></td>
 <td>0</td>
-<td>ChangePasswordTest@6574a52c</td></tr>
+<td>ChangePasswordTest@1e6a3214</td></tr>
 <tr>
-<td title='ChangePasswordTest.ParallelTesting()'><b>ParallelTesting</b><br>Test class: ChangePasswordTest</td>
+<td title='LoginTest.LoginWithValidCredentials()'><b>LoginWithValidCredentials</b><br>Test class: LoginTest</td>
 <td></td>
-<td>0</td>
-<td>ChangePasswordTest@6574a52c</td></tr>
+<td>2</td>
+<td>LoginTest@63376bed</td></tr>
 <tr>
-<td title='LoginTest.ShouldBeAbleToChangePassword()'><b>ShouldBeAbleToChangePassword</b><br>Test class: LoginTest</td>
+<td title='LoginTest.LoginWithInvalidCredentials()'><b>LoginWithInvalidCredentials</b><br>Test class: LoginTest</td>
 <td></td>
-<td>28</td>
-<td>LoginTest@1a942c18</td></tr>
+<td>2</td>
+<td>LoginTest@63376bed</td></tr>
 </table><p>
 </body>
 </html>
