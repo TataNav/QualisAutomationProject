@@ -88,6 +88,8 @@ public class OrdersPage {
     private WebElement actionList;
     @FindBy(xpath = "//mat-form-field/div/div[1]/div/textarea")
     private WebElement comments;
+    @FindBy(xpath = "/html/body/app-root/app-landing-layout/app-landing-page/mat-drawer-container/mat-drawer-content/div/section/article/div/app-order-details/div/form/div/div/div[3]/div[2]/div[2]/div/select")
+    private WebElement cancellingReason;
 
     //Filter
     @FindBy(xpath = "//app-list/div[2]/span/mat-icon")
@@ -197,7 +199,7 @@ public class OrdersPage {
         Thread.sleep(500);
         action.moveToElement(addOtherDocument).click().build().perform();
         //TODO add path using "user.dir"
-        String path = "C:\\QualisAutomationProject\\WebAutomationModule\\src\\test\\testResources\\Redemption.pdf";
+        String path = "C:\\source\\qualisautomationtest\\WebAutomationModule\\src\\test\\testResources\\Redemption.pdf";
         Helper.FileUpload_Robo(path);
     }
 
@@ -230,6 +232,10 @@ public class OrdersPage {
         landingPage.waitForElementToAppear(orderStatus);
         select = new Select(actionList);
         select.selectByValue(action);
+        if(action.equalsIgnoreCase("Cancel Order")){
+            select = new Select(cancellingReason);
+            select.selectByValue("Client Changed Their Mind");
+        }
         if(!action.equalsIgnoreCase("Approve")){
             landingPage.waitForElementIsClickable(comments);
             comments.sendKeys("Confirmation");

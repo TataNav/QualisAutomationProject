@@ -10,7 +10,11 @@
                     <exclude name="ResetPassword"></exclude>
                 </methods>
             </class>
-            <class name="OrdersCRUDActionsCheck"/>
+            <class name="OrdersCRUDActionsCheck">
+                <methods>
+                    <exclude name="ProcessRedemptionOrder"></exclude>
+                </methods>
+            </class>
         </classes>
     </test>
 </suite>

@@ -49,8 +49,7 @@ public class ConfigFileReader {
         switch(getBrowserName()){
             case "chrome":
                 //TODO find out why sometime path to the driver doesn't work, which forces to set the hard coded path(line#51) instead of the dynamic one in the line#52
-                System.setProperty("webdriver.chrome.driver", "/C:/source/QualisAutomationProject/WebAutomationModule/src/main/resources/drivers/chromedriver.exe");
-                //System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/src/main/resources/drivers/chromedriver.exe");
+                System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/src/main/resources/drivers/chromedriver.exe");
                 //it is allowed to execute tests in headless mode as well, depends on the command coming from the cmd
                 //command should be - mvn test -Dbrowser=chromeheadless
                 ChromeOptions options = new ChromeOptions();

@@ -1,6 +1,77 @@
-[INFO ] 2021-11-18 23:23:50 [main] BaseTest - This is to track the suite execution start time
-[INFO ] 2021-11-18 23:23:53 [TestNG-test=Login Functionality Regression-2] BaseTest - Before CLASS setup is successfully done
-[INFO ] 2021-11-18 23:23:53 [TestNG-test=Login Functionality Regression-1] BaseTest - Before CLASS setup is successfully done
-[INFO ] 2021-11-18 23:24:22 [TestNG-test=Login Functionality Regression-1] BaseTest - LoginTest tests have been executed.
-[INFO ] 2021-11-18 23:27:24 [TestNG-test=Login Functionality Regression-2] BaseTest - LoginTest tests have been executed.
-[INFO ] 2021-11-18 23:27:24 [main] BaseTest - This is to track the suite completion time
+[INFO ] 2021-12-13 18:41:43 [main] BaseTest - Start the test suite execution
+[INFO ] 2021-12-13 18:41:47 [main] BaseTest - Before CLASS setup is successfully done
+[INFO ] 2021-12-13 18:41:58 [main] BaseTest - Connected to the database.
+[INFO ] 2021-12-13 18:44:49 [main] BaseTest - LoginTest tests have been executed.
+[INFO ] 2021-12-13 18:44:54 [main] BaseTest - The test suite execution has just completed.
+[INFO ] 2021-12-13 18:44:54 [main] BaseTest - Disconnected from the database.
+[INFO ] 2021-12-13 18:45:50 [main] BaseTest - Start the test suite execution
+[INFO ] 2021-12-13 18:45:53 [main] BaseTest - Before CLASS setup is successfully done
+[INFO ] 2021-12-13 18:46:03 [main] BaseTest - Connected to the database.
+[INFO ] 2021-12-13 18:48:22 [main] BaseTest - LoginTest tests have been executed.
+[INFO ] 2021-12-13 18:48:26 [main] BaseTest - The test suite execution has just completed.
+[INFO ] 2021-12-13 18:48:27 [main] BaseTest - Disconnected from the database.
+[INFO ] 2021-12-13 18:49:16 [main] BaseTest - Start the test suite execution
+[INFO ] 2021-12-13 18:49:18 [TestNG-test=Login Functionality Regression-2] BaseTest - Before CLASS setup is successfully done
+[INFO ] 2021-12-13 18:49:18 [TestNG-test=Login Functionality Regression-1] BaseTest - Before CLASS setup is successfully done
+[INFO ] 2021-12-13 18:49:27 [TestNG-test=Login Functionality Regression-2] BaseTest - Connected to the database.
+[INFO ] 2021-12-13 18:49:27 [TestNG-test=Login Functionality Regression-1] BaseTest - Connected to the database.
+[INFO ] 2021-12-13 18:52:08 [main] BaseTest - Start the test suite execution
+[INFO ] 2021-12-13 18:52:12 [TestNG-test=Login Functionality Regression-1] BaseTest - Before CLASS setup is successfully done
+[INFO ] 2021-12-13 18:52:12 [TestNG-test=Login Functionality Regression-2] BaseTest - Before CLASS setup is successfully done
+[INFO ] 2021-12-13 18:52:22 [TestNG-test=Login Functionality Regression-1] BaseTest - Connected to the database.
+[INFO ] 2021-12-13 18:52:22 [TestNG-test=Login Functionality Regression-2] BaseTest - Connected to the database.
+[INFO ] 2021-12-13 18:52:43 [main] BaseTest - Start the test suite execution
+[INFO ] 2021-12-13 18:52:46 [TestNG-test=Login Functionality Regression-2] BaseTest - Before CLASS setup is successfully done
+[INFO ] 2021-12-13 18:52:54 [TestNG-test=Login Functionality Regression-1] BaseTest - Before CLASS setup is successfully done
+[INFO ] 2021-12-13 18:53:47 [main] BaseTest - Start the test suite execution
+[INFO ] 2021-12-13 18:53:50 [TestNG-test=Login Functionality Regression-1] BaseTest - Before CLASS setup is successfully done
+[INFO ] 2021-12-13 18:53:50 [TestNG-test=Login Functionality Regression-2] BaseTest - Before CLASS setup is successfully done
+[INFO ] 2021-12-13 18:54:03 [TestNG-test=Login Functionality Regression-1] BaseTest - Connected to the database.
+[INFO ] 2021-12-13 18:54:03 [TestNG-test=Login Functionality Regression-2] BaseTest - Connected to the database.
+[INFO ] 2021-12-13 18:54:08 [TestNG-test=Login Functionality Regression-1] BaseTest - LoginTest tests have been executed.
+[INFO ] 2021-12-13 18:55:22 [main] BaseTest - Start the test suite execution
+[INFO ] 2021-12-13 18:55:24 [TestNG-test=Login Functionality Regression-2] BaseTest - Before CLASS setup is successfully done
+[INFO ] 2021-12-13 18:55:24 [TestNG-test=Login Functionality Regression-1] BaseTest - Before CLASS setup is successfully done
+[INFO ] 2021-12-13 18:55:37 [TestNG-test=Login Functionality Regression-1] BaseTest - Connected to the database.
+[INFO ] 2021-12-13 18:55:42 [TestNG-test=Login Functionality Regression-1] BaseTest - LoginTest tests have been executed.
+[INFO ] 2021-12-13 18:55:44 [TestNG-test=Login Functionality Regression-2] BaseTest - Connected to the database.
+[INFO ] 2021-12-13 19:00:52 [TestNG-test=Login Functionality Regression-2] BaseTest - LoginTest tests have been executed.
+[INFO ] 2021-12-13 19:00:53 [main] BaseTest - The test suite execution has just completed.
+[INFO ] 2021-12-13 19:00:53 [main] BaseTest - Disconnected from the database.
+[INFO ] 2021-12-13 19:02:49 [main] BaseTest - Start the test suite execution
+[INFO ] 2021-12-13 19:02:51 [TestNG-test=Login Functionality Regression-2] BaseTest - Before CLASS setup is successfully done
+[INFO ] 2021-12-13 19:02:52 [TestNG-test=Login Functionality Regression-1] BaseTest - Before CLASS setup is successfully done
+[INFO ] 2021-12-13 19:03:02 [TestNG-test=Login Functionality Regression-2] BaseTest - Connected to the database.
+[INFO ] 2021-12-13 19:03:03 [TestNG-test=Login Functionality Regression-1] BaseTest - Connected to the database.
+[INFO ] 2021-12-13 19:03:07 [TestNG-test=Login Functionality Regression-1] BaseTest - LoginTest tests have been executed.
+[INFO ] 2021-12-13 19:07:58 [TestNG-test=Login Functionality Regression-2] BaseTest - LoginTest tests have been executed.
+[INFO ] 2021-12-13 19:08:02 [main] BaseTest - The test suite execution has just completed.
+[INFO ] 2021-12-13 19:08:03 [main] BaseTest - Disconnected from the database.
+[INFO ] 2021-12-13 19:08:45 [main] BaseTest - Start the test suite execution
+[INFO ] 2021-12-13 19:08:47 [main] BaseTest - Before CLASS setup is successfully done
+[INFO ] 2021-12-13 19:08:56 [main] BaseTest - Connected to the database.
+[INFO ] 2021-12-13 19:11:13 [main] BaseTest - LoginTest tests have been executed.
+[INFO ] 2021-12-13 19:11:18 [main] BaseTest - The test suite execution has just completed.
+[INFO ] 2021-12-13 19:11:18 [main] BaseTest - Disconnected from the database.
+[INFO ] 2021-12-13 23:19:44 [main] BaseTest - Start the test suite execution
+[INFO ] 2021-12-13 23:19:48 [TestNG-test=Login Functionality Regression-1] BaseTest - Before CLASS setup is successfully done
+[INFO ] 2021-12-13 23:19:56 [TestNG-test=Login Functionality Regression-2] BaseTest - Before CLASS setup is successfully done
+[INFO ] 2021-12-13 23:19:58 [TestNG-test=Login Functionality Regression-2] BaseTest - Connected to the database.
+[INFO ] 2021-12-13 23:19:58 [TestNG-test=Login Functionality Regression-1] BaseTest - Connected to the database.
+[INFO ] 2021-12-13 23:20:36 [main] BaseTest - Start the test suite execution
+[INFO ] 2021-12-13 23:20:39 [TestNG-test=Login Functionality Regression-1] BaseTest - Before CLASS setup is successfully done
+[INFO ] 2021-12-13 23:20:39 [TestNG-test=Login Functionality Regression-2] BaseTest - Before CLASS setup is successfully done
+[INFO ] 2021-12-13 23:20:48 [TestNG-test=Login Functionality Regression-1] BaseTest - Connected to the database.
+[INFO ] 2021-12-13 23:20:50 [TestNG-test=Login Functionality Regression-2] BaseTest - Connected to the database.
+[INFO ] 2021-12-13 23:20:53 [TestNG-test=Login Functionality Regression-1] BaseTest - LoginTest tests have been executed.
+[INFO ] 2021-12-13 23:25:45 [TestNG-test=Login Functionality Regression-2] BaseTest - LoginTest tests have been executed.
+[INFO ] 2021-12-13 23:25:49 [main] BaseTest - The test suite execution has just completed.
+[INFO ] 2021-12-13 23:25:50 [main] BaseTest - Disconnected from the database.
+[INFO ] 2021-12-13 23:29:37 [main] BaseTest - Start the test suite execution
+[INFO ] 2021-12-13 23:29:40 [TestNG-test=Login Functionality Regression-2] BaseTest - Before CLASS setup is successfully done
+[INFO ] 2021-12-13 23:29:40 [TestNG-test=Login Functionality Regression-1] BaseTest - Before CLASS setup is successfully done
+[INFO ] 2021-12-13 23:29:54 [TestNG-test=Login Functionality Regression-1] BaseTest - Connected to the database.
+[INFO ] 2021-12-13 23:29:54 [TestNG-test=Login Functionality Regression-2] BaseTest - Connected to the database.
+[INFO ] 2021-12-13 23:30:06 [TestNG-test=Login Functionality Regression-1] BaseTest - LoginTest tests have been executed.
+[INFO ] 2021-12-13 23:33:02 [main] BaseTest - The test suite execution has just completed.
+[INFO ] 2021-12-13 23:33:02 [main] BaseTest - Disconnected from the database.

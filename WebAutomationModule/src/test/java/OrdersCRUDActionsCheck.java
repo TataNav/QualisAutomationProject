@@ -23,6 +23,9 @@ public class OrdersCRUDActionsCheck extends BaseTest {
     private LoginPage loginPg;
     Actions actions;
     private Statement statement;
+    //test data
+    String eventType = "redemption";
+    String redemptionType = "Full Redemption";
 
     @BeforeClass()
     public void OrdersTestSetup() throws SQLException {
@@ -33,6 +36,20 @@ public class OrdersCRUDActionsCheck extends BaseTest {
         actions = new Actions(driver);
         connection = Helper.ConnectToDatabase();
         statement = connection.createStatement();
+    }
+
+    private void AddOrder() throws InterruptedException, AWTException {
+        //Order details
+        ordersPg.AddFundName("FOR TESTING");
+        ordersPg.AddInvestorIdentification("AUTO INVESTOR");
+        ordersPg.SelectEvent(eventType);
+        ordersPg.InsertEventDetails(redemptionType);
+        ordersPg.PickDate("11/2021");
+        ordersPg.AddComment("Automation test");
+        //Documentation
+        ordersPg.Save();
+        ordersPg.AddDocument();
+        ordersPg.RequestApproval();
     }
 
     private void ChangeOrderStatus(String loginUser, String statusToCheck, String action) throws InterruptedException, IOException {
@@ -50,31 +67,22 @@ public class OrdersCRUDActionsCheck extends BaseTest {
         ordersPg.GetLandingPage().GoToLoggedInUserSettingsToLogout();
     }
 
-    @Test
-    public void CreateRedemptionOrder() throws IOException, InterruptedException, AWTException, SQLException {
-        String eventType = "redemption";
-        String redemptionType = "Full Redemption";
+    private void CreateOrder() throws IOException, InterruptedException, AWTException {
         loginPg.LoginAs("finadviser");
         Thread.sleep(200);
-        //Assert.assertEquals(driver.getCurrentUrl(), "https://www.qualis-test.com/#/");
         ordersPg.GetLandingPage().GoToOrdersPage();
         Thread.sleep(200);
         Assert.assertEquals(driver.getCurrentUrl(), "https://www.qualis-test.com/#/orders");
         ordersPg.GetLandingPage().CloseNotification();
         ordersPg.AddNewOrder();
-        //Order details
-        ordersPg.AddFundName("FOR TESTING");
-        ordersPg.AddInvestorIdentification("AUTO INVESTOR");
-        ordersPg.SelectEvent(eventType);
-        ordersPg.InsertEventDetails(redemptionType);
-        ordersPg.PickDate("11/2021");
-        ordersPg.AddComment("Automation test");
-        //Documentation
-        ordersPg.Save();
-        ordersPg.AddDocument();
-        ordersPg.RequestApproval();
+        AddOrder();
         //Status update and checking
         Assert.assertEquals(ordersPg.GetNotification(),"Order sent to approver");//TODO there is a typo in the notification message, it should be - "Successfully uploaded document"
+    }
+
+    @Test
+    public void ProcessRedemptionOrder() throws IOException, InterruptedException, AWTException, SQLException {
+        CreateOrder();
         CheckStatusAndLogout("Sent to Approver");
         ChangeOrderStatus("finadviser","Sent to Approver", "Approve");
         CheckStatusAndLogout("Sent to Qualis");
@@ -92,6 +100,40 @@ public class OrdersCRUDActionsCheck extends BaseTest {
         orders.next();
         Assert.assertEquals(ordersPg.GetOrderId(), orders.getString("order_id"));
     }
+
+    @Test
+    public void CancelOrder() throws InterruptedException, IOException, AWTException, SQLException {
+        CreateOrder();
+        CheckStatusAndLogout("Sent to Approver");
+        ChangeOrderStatus("finadviser","Sent to Approver", "Cancel Order");
+        int order_id = Integer.parseInt(ordersPg.GetOrderId());
+        CheckStatusAndLogout("Order Cancelled");
+        String query = String.format("SELECT * FROM qualis_testdb.qaip_order_mgmt ord\n" +
+                "join qualis_testdb.qaip_order_status st on ord.order_status_id = st.order_status_id\n" +
+                "where ord.order_id = %s", order_id);
+        ResultSet orders = statement.executeQuery(query);
+        orders.next();
+        Assert.assertEquals("ORDER CANCELLED", orders.getString("order_status_name"));
+    }
+    @Test
+    public void RejectOrder() throws IOException, InterruptedException, AWTException, SQLException {
+        CreateOrder();
+        CheckStatusAndLogout("Sent to Approver");
+        ChangeOrderStatus("finadviser","Sent to Approver", "Approve");
+        CheckStatusAndLogout("Sent to Qualis");
+        ChangeOrderStatus("opsadmin","Sent to Qualis", "Approve");
+        CheckStatusAndLogout("Sent to Fund Manager");
+        ChangeOrderStatus("fund manager","Sent to Fund Manager", "Reject");
+        int order_id = Integer.parseInt(ordersPg.GetOrderId());
+        CheckStatusAndLogout("Order Rejected");
+        String query = String.format("SELECT * FROM qualis_testdb.qaip_order_mgmt ord\n" +
+                "join qualis_testdb.qaip_order_status st on ord.order_status_id = st.order_status_id\n" +
+                "where ord.order_id = %s", order_id);
+        ResultSet orders = statement.executeQuery(query);
+        orders.next();
+        Assert.assertEquals("ORDER REJECTED", orders.getString("order_status_name"));
+    }
+
     @AfterClass
     public void CloseDriverAfterEachClassExecution(){
         logger.info(LoginTest.class.getName() + " tests have been executed.");
