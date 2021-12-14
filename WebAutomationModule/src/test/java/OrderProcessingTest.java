@@ -16,7 +16,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class OrdersCRUDActionsCheck extends BaseTest {
+public class OrderProcessingTest extends BaseTest {
     private OrdersPage ordersPg;
     public WebDriver driver;
     protected String url = ConfigFileReader.getURL();
